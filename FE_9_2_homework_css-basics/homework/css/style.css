@@ -1,0 +1,142 @@
+/*-- task 1 - Print version --*/
+@media print {
+	@page {
+    	margin: 1cm; 
+	}
+	body {
+        background: transparent;
+        padding-top: 0;
+    }
+    .tm-sidebar,
+    section:not(:first-of-type),
+    #about
+    {
+        display: none;
+    }
+	.tm-main-content {
+    	margin-left: 0;
+    }
+    .tm-content-box{
+    	/*-webkit-flex-direction: column;*/
+    	flex-direction: column;
+    	margin-bottom: 0;
+	}
+	.tm-team-description-container{
+		max-width: 100%;
+	}
+	.pad{
+		padding-top:0;
+		padding-bottom:0;
+	}
+	.tm-banner {
+	    height: 270px;
+	}
+	.tm-footer {
+    	padding-top: 15px;
+	}
+	h2.tm-section-title {
+        color: #4430FF;
+    }
+}
+@media screen {
+	/*-- task 2 - Gallery block --*/
+	#about .img-fluid {
+	    border-radius: 50%;
+	}
+	#about h2.tm-section-title:hover{
+		background-color: #31B0D5;
+		color: #fff;
+		font-weight: bold;
+	}
+	/*-- task 3 - First letter in each paragraphs --*/
+	p:first-letter{
+		color: #76cdd7;
+		font-size: 30px;
+		line-height: 0;
+	}
+	/*-- task 4 - Blocks shadow --*/
+	.tm-content-box,
+	.tm-sidebar{
+		box-shadow: 0px 0px 11px #555;
+	}
+	/*-- task 5 - Triangle --*/
+	#home,
+	section{
+		position: relative;
+	}
+	#home:before,
+	section:before{
+		content: "";
+		position: absolute;
+		width: 0;
+		height: 0;
+		top: 0;
+		left: 0;
+		border-style: solid;
+		border-width: 25px 125px 0 0;
+		border-color: #39C2D7 transparent transparent transparent;
+	}
+	/*-- task 6 - How We Do It --*/	
+	.carousel-content h2{
+		color: gainsboro;
+		letter-spacing: 5px;
+	}
+	/*-- task 7 - First paragraph after h2 --*/	
+	h2 + p{
+		font-style: italic;
+	}
+	/*-- task 8 - Text alignment --*/	
+	section p{
+		text-indent: 20px;
+		line-height: 2;
+	}
+	/*-- task 9 - List styling --*/
+	.heading ol li a:visited{
+		color: silver;
+	}
+	.heading ol li a:hover{
+		text-decoration-style: double;
+	}
+	.heading ol li:first-child a::after,
+	.heading ol li:nth-child(3) a::after{
+		content: "New";
+		color: red;
+		vertical-align: super;
+		font-size: 12px;
+	}
+	/*-- task 10 - Block styling --*/
+	.gallery-container li:nth-child(odd){
+		background-color: #F2F2F2;
+	}
+	.gallery-container 	p:first-letter{
+		color: #282828;
+	}
+	.gallery-container 	p{
+		text-indent: 0;
+		line-height: 1.5;
+		font-size: 20px;
+	}
+	.gallery-container 	h2{
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+	/*-- task 11 - Sidebar --*/
+	.tm-main-nav ul li:not(:last-child){
+		border-bottom: 2px dotted silver;
+	}
+	/*-- task 12 - Work with Us form --*/
+	.contact-form input,
+	.contact-form textarea,
+	.contact-form button{
+		color: red;
+	}
+	.contact-form .mandatory-field:after{
+		content: "*";
+		color: red;
+		font-weight: bold;
+	}
+	.contact-form button:hover{
+		background-color: #39C2D7;
+		border-color: transparent;
+	}
+}
