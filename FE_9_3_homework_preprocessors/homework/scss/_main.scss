@@ -1,0 +1,174 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  font-family: $fontFamily;
+}
+a{
+  text-decoration: none;
+}
+.main-wrapper{
+  width: 960px;
+  margin: 0 auto;
+  padding: 0 140px;
+  background: $contentBackground;
+  &>*{
+    width: 100%;
+    float: left;
+  }
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+header{
+  box-sizing: border-box;
+  float: left;
+  width: 100%;
+  .logo{
+    width: 360px;
+    float: left;
+    img{
+      width:100%;
+    }
+  }
+  nav{
+    width: 600px;
+    float: left;
+    margin-top: 145px;
+    a{
+      display: inline-block;
+      width: 200px;
+      float: left;
+      text-align: center;
+      color: $activeColor;
+      font-size: 1rem;
+      text-transform: uppercase;
+      padding: 20px 0;
+      border-top: 1px solid $hrColor;
+      border-bottom: 1px solid $hrColor;
+    }
+  }
+}
+.toolbar{
+  width: 100%;
+  input{
+    float: right;
+    border: 1px solid $activeColor;
+    padding: 10px 15px;
+    margin: 20px 0;
+    background: transparent;
+    font-family: $inputFontFamily;
+    &::placeholder{
+      color: $activeColor;
+      font-weight: bold;
+      font-family: $inputFontFamily;
+    }
+  }
+}
+.post-list{
+  article{
+    width: 48.5%;
+    box-sizing: border-box;
+    background: $postListBackground;
+    padding: 10px;
+    margin-bottom: 15px;
+    &:nth-child(even){
+      float: right;
+    }
+    &:nth-child(odd){
+      float: left;
+      clear: both;
+    }
+    img{
+      width: 100%;
+      display: block;
+    }
+    &>div{
+      padding: 0 10px;
+      line-height: 1.5;
+      .post-description{
+        color: $postListPicInfo;
+        border-bottom: 1px solid $hrColor;
+        font-size: .8rem;
+        padding: 9px 5px;
+      }
+      h3{
+        color: $postListTitle;
+        text-transform: uppercase;
+        padding-top: 4px;
+      }
+      p{
+        color: $contentColor;
+        margin-bottom: 20px;      
+      }
+    }
+  }
+}
+.about{
+  margin-top: 70px;
+  h1{
+    color: $activeColor;
+    text-align: right;
+    text-transform: uppercase;
+  }
+  p{
+    color: $contentColor;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  img{
+    width: 100%;
+    display: block;
+  }
+}
+.contact-form{
+  margin-top: 70px;
+  h1, h4{
+    color: $activeColor;
+    text-align: right;
+    text-transform: uppercase;
+  }
+  form{
+    margin-top: 20px;
+    input,
+    textarea{
+      width: 100%;
+      border: 1px solid $hrColor;
+      color: $formTextColor;
+      padding: 15px;
+      margin-bottom: 20px;
+      font-size: 15px;
+      font-family: $inputFontFamily;
+      box-sizing: border-box;
+      background: transparent;
+      &::placeholder{
+        color: $formTextColor;
+        font-family: $inputFontFamily;
+        font-size: 15px;
+      }
+      &:focus{
+        outline: none;
+        border: 1px solid $activeColor;
+      }
+    }
+    button{
+      float: right;
+      background: $activeColor;
+      width: 200px;
+      padding: 15px;
+      border: 0;
+      color: #fff;
+      text-transform: uppercase;
+    }
+  }
+}
+footer{
+  margin: 5px 0;
+  span{
+    color: $footerTextColor;
+    font-size: 12px;
+  }
+}
