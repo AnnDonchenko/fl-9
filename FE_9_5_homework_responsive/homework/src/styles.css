@@ -1,0 +1,199 @@
+/*
+ * Feel free to change name of colors if you need it
+ * Feel free to add new colors if you need it
+ */
+ /*
+:root {
+  --bg-color--dark: #0a1223;
+  --bg-color--light: #fff;
+  --link: #5d5d5d;
+  --link--active: #54597d;
+  --link--hover: #54597d;
+  --article-title: #ddd;
+  --article-title--dark: #000;
+  --thumbnail--description: #5d5d5d;
+
+   These styles are needed only for media query max-width: 575px 
+
+   The 'Up' button (circle button at right bottom corner) 
+  --btn-color: #fff;
+  --btn-bg-color: #5ebcff;
+
+  --navigation-border-bottom: #ddd;
+  --thumbnail-title: #484747;
+}
+*/
+/* Your styles go here */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+}
+body{
+  background: #0a1223;
+  font-family: Arial, sans-serif;
+}
+.wrapper{
+  margin: 0 auto;
+  padding: 0 40px;
+  max-width: 1400px;
+}
+nav{
+  display: flex;
+  justify-content: flex-end;
+  margin: 30px 0;
+}
+nav a{
+  margin-right: 2%;
+  color: #5d5d5d;
+  font-size: 1.2rem;
+}
+nav a:hover{
+  color: #54597d;
+}
+nav a:active, nav a:first-child{
+  color: #54597d;
+}
+header h1{
+  color: #ddd;
+  text-align: center;
+  margin: 180px 0;
+  font-size: 4rem;
+}
+main.row{
+  max-width: 990px;
+  margin: 0 auto;
+  margin-bottom: 140px;
+}
+article{
+  display: grid;
+/*  grid-template-rows: 1fr 3fr;*/
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0 20px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+main article:nth-child(odd){
+  grid-template-areas: 
+        "h img"
+        "p img";
+}
+main article:nth-child(even){
+  grid-template-areas: 
+        "img h"
+        "img p";
+}
+article h2{
+  color: #ddd;
+  grid-area: h;
+  font-size: 2rem;
+  background: linear-gradient(45deg, #ddd 5%, #484747 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: table;
+}
+article p{
+  color: #5d5d5d;
+  grid-area: p;
+  font-size: 1rem;
+  text-indent: 15px;
+  text-align: justify;
+}
+article img{
+  grid-area: img;
+  width: 100%;
+  min-width: 475px;
+}
+.up-btn{
+  display: none;
+}
+@media (max-width: 1200px) {
+  header h1{
+    color: #ddd;
+    text-align: center;
+    margin: 180px 0;
+    font-size: 5vw;
+  }
+}
+@media (max-width: 991px) {
+  .wrapper{
+    width: 100%;
+    padding: 0;
+  }
+  nav{
+    justify-content: center;
+  }
+  header h1{
+    font-size: 40px;
+  }
+  main.row{
+    max-width: 575px;
+    padding: 0 40px;
+  }
+  article{
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+  }
+  main article:nth-child(odd){
+    grid-template-areas: 
+          "h"
+          "p"          
+          "img";
+  }
+  main article:nth-child(even){
+    grid-template-areas: 
+          "h"
+          "p"          
+          "img";
+  }
+}
+
+@media (max-width: 575px){
+  body{
+    background: #fff;
+  }
+  .wrapper{
+    padding: 0;
+  }
+  nav{
+    flex-direction: column;
+    margin: 0;
+  }
+  nav a{
+    border-bottom: 1px solid #ddd;
+    padding: 20px;
+    margin-right: 0;
+  }
+  nav a:first-child{
+    font-weight: 600;
+  }
+  header h1{
+    color: #000;
+  }
+  article h2{
+    color: #484747;
+    background: none;
+    -webkit-text-fill-color: #484747;
+  }
+  article img{
+    min-width: 100%;
+  }
+  .up-btn{
+    display: block;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: #5ebcff;
+    color: #fff;
+    line-height: 75px;
+    text-align: center;
+    font-size: 1.2rem;
+    box-shadow: 5px 5px 20px #ccc;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+  }
+}
