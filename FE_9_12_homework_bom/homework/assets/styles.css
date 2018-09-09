@@ -1,0 +1,83 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.page{
+	width: 500px;
+	margin: 20px auto;
+}
+h1{
+	text-align: center;
+	margin: 20px 0;
+}
+#to_do{
+  display: block;
+}
+#to_add, #to_modify{
+  display: none;
+}
+.form{
+	width: 300px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-areas:
+		'a a'
+		'b c';
+		grid-gap: 20px 60px;
+}
+.form input{
+	grid-area: a;
+	font-size: 20px;
+    border-radius: 10px;
+    padding: 5px;	
+}
+.form .cansel_btn{
+	float: left;
+	grid-area: b;
+}
+.form .save_btn{
+	float: right;
+	grid-area: c;
+}
+#add_btn, .cansel_btn, .save_btn{
+    background: #DDDDDD;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px grey;
+    font-size: 20px;
+    padding: 5px;	
+}
+#add_btn{
+    padding: 5px 30px;
+    display: block;
+    margin: 0 auto;
+}
+#TODO_list{
+  padding: 0;
+  list-style: none;
+  width: 300px;
+  margin: 0 auto;
+}
+#TODO_list button{
+  border: none;
+  background: none;
+  padding: 0;
+}
+#TODO_list li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+#TODO_list p{
+  margin: 0;
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+}
+#empty_list{
+  font-size: 30px;
+  text-align: center;
+  padding: 20px;
+}
