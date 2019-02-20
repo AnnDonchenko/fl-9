@@ -1,2 +1,2 @@
 # fl-9
-Front-end University
+EPAM Front-end University
